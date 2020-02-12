@@ -24,6 +24,6 @@ console.log(calcAmountOfOne(1)) // 1 -> 1
 console.log(calcAmountOfOne(31)) // 11111 -> 5
 console.log(calcAmountOfOne(1025)) // 10000000001 -> 2
 console.log(calcAmountOfOne(175)) // 10101111 -> 6
-console.log(calcAmountOfOne(0)) // 10101111 -> 6
-console.log(calcAmountOfOne(-134)) // 10101111 -> 6
+console.log(calcAmountOfOne(0)) // 0 -> 0
+console.log(calcAmountOfOne(-134)) // error
 
