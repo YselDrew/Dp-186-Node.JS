@@ -8,7 +8,7 @@
 
 function calcAmountOfOne(number) {
   if (number < 0) {
-    console.log('Value shouldn\'t be negative')
+    console.log("Value shouldn't be negative")
     return
   }
 
@@ -16,14 +16,15 @@ function calcAmountOfOne(number) {
   const noZeroStr = binaryNumberStr.replace(/0+/gi, "")
   const amountOfOneBit = noZeroStr.length
 
+  console.log(binaryNumberStr, " -> ", amountOfOneBit)
   return amountOfOneBit
 }
 
-console.log(calcAmountOfOne(1234)) // 10011010010 -> 5
-console.log(calcAmountOfOne(1)) // 1 -> 1
-console.log(calcAmountOfOne(31)) // 11111 -> 5
-console.log(calcAmountOfOne(1025)) // 10000000001 -> 2
-console.log(calcAmountOfOne(175)) // 10101111 -> 6
-console.log(calcAmountOfOne(0)) // 0 -> 0
-console.log(calcAmountOfOne(-134)) // error
+calcAmountOfOne(1234) // 10011010010 -> 5
+calcAmountOfOne(1) // 1 -> 1
+calcAmountOfOne(31) // 11111 -> 5
+calcAmountOfOne(1025) // 10000000001 -> 2
+calcAmountOfOne(175) // 10101111 -> 6
+calcAmountOfOne(0) // 0 -> 0
+calcAmountOfOne(-134) // error
 
