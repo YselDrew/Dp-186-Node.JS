@@ -14,6 +14,12 @@
 
 function sortString(str) {
   let arr = str.split(" ")
+
+  if (arr.length > 9) {
+    console.log("String is too long")
+    return
+  }
+
   let buffArr = []
   let regex
 
@@ -36,5 +42,6 @@ function sortString(str) {
 
 sortString("is2 Thi1s T4est 3a")
 sortString("4of Fo1r pe6ople g3ood th5e the2")
+sortString("i9nto sai2d indi4cate th5at t3o investiga8tion an6y Typic1ally furt7her 10a")
 sortString("")
 
