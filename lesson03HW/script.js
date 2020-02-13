@@ -1,3 +1,9 @@
+// TODO: 
+// 1. Finish substring function
+// 2. Rewrite lastIndexOf function
+// 3. Write includes function
+
+
 // concat()
 function myConcat(...strings) {
   let newStr = '';
@@ -62,7 +68,7 @@ function mySubstr(str, start, length = str.length - start) {
   }
   
   if (start < 0) {
-    start = str.length + start
+    start = str.length + start;
   }
 
   if (start >= str.length) {
@@ -71,12 +77,26 @@ function mySubstr(str, start, length = str.length - start) {
 
   for (let i = start; i < newStrLength; i++) {
     if (i > str.length - 1) {
-      return newStr
+      return newStr;
     }
-    newStr += str[i]
+    newStr += str[i];
   }
   return newStr;
 }
+
+
+// substring(str, indexA, indexB) 
+function mySubstring(str, indexA, indexB = str.length) {
+  let newStr = '';
+  for (let i = indexA; i < indexB; i++) {
+    newStr += str[i];
+  }
+
+  return newStr;
+}
+
+console.log(mySubstring('Mozilla', 1));
+console.log('Mozilla'.substring(10, 8))
 
 
 // myIndexOf(str, searchValue, fromIndex)
@@ -111,3 +131,4 @@ function mySubstr(str, start, length = str.length - start) {
 // }
 //
 // console.log(myIndexOf('canal', 'an'))
+
