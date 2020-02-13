@@ -46,6 +46,23 @@ function myLastIndexOf(str, searchValue, fromIndex = str.length) {
 // console.log(myLastIndexOf('canal', ''));
 // console.log(myLastIndexOf('canal', '', 2));
 
+// repeat(str, count)
+
+function repeat(str, count = 0) {
+  if (count < 0) {
+    throw new RangeError('Value should\'nt be less than 0')
+  }
+  if (count === Infinity) {
+    throw new RangeError('Value should be less than infinity')
+  }
+  let newStr = '';
+
+  for (let i = 1; i <= count; i++) {
+    newStr += str;
+  }
+  return newStr;
+}
+
 // myIndexOf(str, searchValue, fromIndex)
 
 // function myIndexOf(str, searchValue, fromIndex = 0) {
