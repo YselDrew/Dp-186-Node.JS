@@ -20,48 +20,48 @@
 // If a player that has already been sent off receives another card - ignore it.
 
 function checkTeams(cards) {
-  let cardData
+  let cardData;
 
-  const teamA = fillTeam()
-  const teamB = fillTeam()
-  const amountOfPlayers = [11, 11]
+  const teamA = fillTeam();
+  const teamB = fillTeam();
+  const amountOfPlayers = [11, 11];
 
   for (let i = 0; i < cards.length; i++) {
-    cardData = parseCard(cards[i])
+    cardData = parseCard(cards[i]);
 
     if (cardData.team === "A") {
-      addCardToPlayer(teamA, cardData)
-      amountOfPlayers[0] = calcAmountOfPlayers(teamA)
+      addCardToPlayer(teamA, cardData);
+      amountOfPlayers[0] = calcAmountOfPlayers(teamA);
       if (amountOfPlayers[0] < 7) {
-        console.log("Team A loses")
-        return
+        console.log("Team A loses");
+        return;
       }
     } else {
-      addCardToPlayer(teamB, cardData)
-      amountOfPlayers[1] = calcAmountOfPlayers(teamB)
+      addCardToPlayer(teamB, cardData);
+      amountOfPlayers[1] = calcAmountOfPlayers(teamB);
       if (amountOfPlayers[1] < 7) {
-        console.log("Team B loses")
-        return
+        console.log("Team B loses");
+        return;
       }
     }
   }
 
-  console.log(cards, amountOfPlayers)
+  console.log(cards, amountOfPlayers);
 
-  return amountOfPlayers
+  return amountOfPlayers;
 }
 
 function fillTeam() {
-  const arr = []
+  const arr = [];
   for (let i = 0; i < 11; i++) {
-    arr[i] = 0
+    arr[i] = 0;
   }
-  return arr
+  return arr;
 }
 
 function parseCard(cardStr) {
-  const [team, playerStr, color] = cardStr.split(/([0-9]+)/)
-  const player = parseInt(playerStr)
+  const [team, playerStr, color] = cardStr.split(/([0-9]+)/);
+  const player = parseInt(playerStr);
 
   return {
     team,
@@ -71,25 +71,25 @@ function parseCard(cardStr) {
 }
 
 function addCardToPlayer(team, card) {
-  const currentPlayer = card.player - 1
+  const currentPlayer = card.player - 1;
 
   if (team[currentPlayer] === "Y" || team[currentPlayer] === "R") {
-    team[currentPlayer] = "R"
+    team[currentPlayer] = "R";
   } else {
-    team[currentPlayer] = card.color
+    team[currentPlayer] = card.color;
   }
 }
 
 function calcAmountOfPlayers(team) {
   return team.filter(value => {
     return value != "R"
-  }).length
+  }).length;
 }
 
-checkTeams([])
-checkTeams(["A4Y", "A4Y"])
-checkTeams(["A4Y", "A4R"])
-checkTeams(["A4Y", "A5R", "B5R", "A4Y", "B6Y"])
-checkTeams(["A4R", "A4R", "A4R"])
-checkTeams(["A4R", "A6R", "A8R", "A10R", "A11R"])
+checkTeams([]);
+checkTeams(["A4Y", "A4Y"]);
+checkTeams(["A4Y", "A4R"]);
+checkTeams(["A4Y", "A5R", "B5R", "A4Y", "B6Y"]);
+checkTeams(["A4R", "A4R", "A4R"]);
+checkTeams(["A4R", "A6R", "A8R", "A10R", "A11R"]);
 
