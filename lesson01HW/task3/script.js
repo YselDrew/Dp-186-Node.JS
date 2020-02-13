@@ -19,27 +19,36 @@
 //
 // If a player that has already been sent off receives another card - ignore it.
 
-function checkTeam(cards) {
+function checkTeams(cards) {
   let cardData
 
   const teamA = fillTeam()
   const teamB = fillTeam()
+  const amountOfPlayers = [11, 11]
 
   for (let i = 0; i < cards.length; i++) {
     cardData = parseCard(cards[i])
+
     if (cardData.team === "A") {
       addCardToPlayer(teamA, cardData)
+      amountOfPlayers[0] = calcAmountOfPlayers(teamA)
+      if (amountOfPlayers[0] < 7) {
+        console.log("Team A loses")
+        return
+      }
     } else {
       addCardToPlayer(teamB, cardData)
+      amountOfPlayers[1] = calcAmountOfPlayers(teamB)
+      if (amountOfPlayers[1] < 7) {
+        console.log("Team B loses")
+        return
+      }
     }
   }
 
-  const amountOfPlayersA = calcAmountOfPlayers(teamA)
-  const amountOfPlayersB = calcAmountOfPlayers(teamB)
+  console.log(cards, amountOfPlayers)
 
-  console.log(cards, [amountOfPlayersA, amountOfPlayersB])
-
-  return [amountOfPlayersA, amountOfPlayersB]
+  return amountOfPlayers
 }
 
 function fillTeam() {
@@ -64,7 +73,7 @@ function parseCard(cardStr) {
 function addCardToPlayer(team, card) {
   const currentPlayer = card.player - 1
 
-  if (team[currentPlayer] === "Y") {
+  if (team[currentPlayer] === "Y" || team[currentPlayer] === "R") {
     team[currentPlayer] = "R"
   } else {
     team[currentPlayer] = card.color
@@ -77,10 +86,10 @@ function calcAmountOfPlayers(team) {
   }).length
 }
 
-checkTeam([])
-checkTeam(["A4Y", "A4Y"])
-checkTeam(["A4Y", "A4R"])
-checkTeam(["A4Y", "A5R", "B5R", "A4Y", "B6Y"])
-checkTeam(["A4R", "A4R", "A4R"])
-checkTeam(["A4R", "A6R", "A8R", "A10R", "A11R"])
+checkTeams([])
+checkTeams(["A4Y", "A4Y"])
+checkTeams(["A4Y", "A4R"])
+checkTeams(["A4Y", "A5R", "B5R", "A4Y", "B6Y"])
+checkTeams(["A4R", "A4R", "A4R"])
+checkTeams(["A4R", "A6R", "A8R", "A10R", "A11R"])
 
