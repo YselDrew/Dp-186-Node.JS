@@ -13,6 +13,8 @@
 // ""  -->  ""
 
 function sortString(str) {
+  console.log("Original string: ", str)
+
   let arr = str.split(" ")
 
   if (arr.length > 9) {
@@ -20,7 +22,7 @@ function sortString(str) {
     return
   }
 
-  let buffArr = []
+  const buffArr = []
   let regex
 
   for (let i = 1; i <= arr.length; i++) {
@@ -34,7 +36,6 @@ function sortString(str) {
 
   const sortedStr = buffArr.join(" ")
 
-  console.log("Original string: ", str)
   console.log("Sorted string: ", sortedStr)
 
   return sortedStr

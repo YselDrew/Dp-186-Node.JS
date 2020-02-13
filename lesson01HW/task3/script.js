@@ -19,7 +19,7 @@
 //
 // If a player that has already been sent off receives another card - ignore it.
 
-function checkCard(cards) {
+function checkTeam(cards) {
   let cardData
 
   const teamA = fillTeam()
@@ -45,7 +45,7 @@ function checkCard(cards) {
 function fillTeam() {
   const arr = []
   for (let i = 0; i < 11; i++) {
-    arr[i] = ""
+    arr[i] = 0
   }
   return arr
 }
@@ -77,10 +77,10 @@ function calcAmountOfPlayers(team) {
   }).length
 }
 
-checkCard([])
-checkCard(["A4Y", "A4Y"])
-checkCard(["A4Y", "A4R"])
-checkCard(["A4Y", "A5R", "B5R", "A4Y", "B6Y"])
-checkCard(["A4R", "A4R", "A4R"])
-checkCard(["A4R", "A6R", "A8R", "A10R", "A11R"])
+checkTeam([])
+checkTeam(["A4Y", "A4Y"])
+checkTeam(["A4Y", "A4R"])
+checkTeam(["A4Y", "A5R", "B5R", "A4Y", "B6Y"])
+checkTeam(["A4R", "A4R", "A4R"])
+checkTeam(["A4R", "A6R", "A8R", "A10R", "A11R"])
 
