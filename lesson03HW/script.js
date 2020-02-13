@@ -1,5 +1,4 @@
 // concat()
-
 function myConcat(...strings) {
   let newStr = '';
   for (let i = 0; i < strings.length; i++) {
@@ -8,11 +7,8 @@ function myConcat(...strings) {
   return newStr;
 }
 
-// console.log(myConcat('hell', 'o', ));
-// console.log(myConcat('Happy ', 'little ', 'accident.'));
 
 // lastIndexOf(string, searchValue, fromIndex)
-
 function myLastIndexOf(str, searchValue, fromIndex = str.length) {
   let index = -1;
 
@@ -37,31 +33,51 @@ function myLastIndexOf(str, searchValue, fromIndex = str.length) {
   return index;
 }
 
-// console.log(myLastIndexOf('canal', 'a'));
-// console.log(myLastIndexOf('canal', 'a', 2));
-// console.log(myLastIndexOf('canal', 'a', 0));
-// console.log(myLastIndexOf('canal', 'x'));
-// console.log(myLastIndexOf('canal', 'c', -5));
-// console.log(myLastIndexOf('canal', 'c', 0));
-// console.log(myLastIndexOf('canal', ''));
-// console.log(myLastIndexOf('canal', '', 2));
 
 // repeat(str, count)
-
 function repeat(str, count = 0) {
   if (count < 0) {
-    throw new RangeError('Value should\'nt be less than 0')
+    throw new RangeError('Value should\'nt be less than 0');
   }
   if (count === Infinity) {
-    throw new RangeError('Value should be less than infinity')
+    throw new RangeError('Value should be less than infinity');
   }
   let newStr = '';
 
   for (let i = 1; i <= count; i++) {
     newStr += str;
   }
+
   return newStr;
 }
+
+
+// substr(str, start, length)
+function mySubstr(str, start, length = str.length - start) {
+  let newStr = '';
+  const newStrLength = start + length;
+
+  if (length <= 0) {
+    return newStr;
+  }
+  
+  if (start < 0) {
+    start = str.length + start
+  }
+
+  if (start >= str.length) {
+    return newStr;
+  }
+
+  for (let i = start; i < newStrLength; i++) {
+    if (i > str.length - 1) {
+      return newStr
+    }
+    newStr += str[i]
+  }
+  return newStr;
+}
+
 
 // myIndexOf(str, searchValue, fromIndex)
 
