@@ -37,8 +37,9 @@ function myLastIndexOf(str, searchValue, fromIndex = str.length) {
   return index;
 }
 
+console.log(myLastIndexOf('HelloWorld', 'Hellop'))
 
-// lastIndexOf(string, searchValue, fromIndex)
+// myIncludes (string, searchValue, fromIndex)
 function myIncludes(str, searchValue, position = 0) {
   let checkWord;
 
@@ -46,7 +47,6 @@ function myIncludes(str, searchValue, position = 0) {
     position = str.length + position - 1;
   }
 
-  console.log(position)
   if (!searchValue) {
     return true;
   }
