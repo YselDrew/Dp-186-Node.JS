@@ -1,9 +1,3 @@
-// TODO: 
-// 1. Finish substring function
-// 2. Rewrite lastIndexOf function DONE
-// 3. Write includes function
-
-
 // concat()
 function myConcat(...strings) {
   let newStr = '';
@@ -72,13 +66,14 @@ function myIncludes(str, searchValue, position = 0) {
 
 
 // repeat(str, count)
-function repeat(str, count = 0) {
+function myRepeat(str, count = 0) {
   if (count < 0) {
-    throw new RangeError('Value should\'nt be less than 0');
+    throw new RangeError('Value shouldn\'t be less than 0');
   }
   if (count === Infinity) {
     throw new RangeError('Value should be less than infinity');
   }
+
   let newStr = '';
 
   for (let i = 1; i <= count; i++) {
@@ -119,47 +114,27 @@ function mySubstr(str, start, length = str.length - start) {
 // substring(str, indexA, indexB) 
 function mySubstring(str, indexA, indexB = str.length) {
   let newStr = '';
+
+  if (indexA < 0 || !indexA) {
+    indexA = 0;
+  }
+
+  if (indexB < 0 || !indexB) {
+    indexB = 0;
+  }
+
+  if (indexA > str.length) {
+    indexA = str.length;
+  }
+
+  if (indexB > str.length) {
+    indexB = str.length;
+  }
+
   for (let i = indexA; i < indexB; i++) {
     newStr += str[i];
   }
 
   return newStr;
 }
-
-// console.log(mySubstring('Mozilla', 1));
-// console.log('Mozilla'.substring(10, 8))
-
-
-// myIndexOf(str, searchValue, fromIndex)
-
-// function myIndexOf(str, searchValue, fromIndex = 0) {
-//   let index = -1;
-//
-//   if (fromIndex >= str.length) {
-//     return index;
-//   }
-//
-//   if (fromIndex < 0) {
-//     fromIndex = 0;
-//   }
-//
-//   if (!searchValue) {
-//     index = str.length;
-//   }
-//
-//   for (let char of searchValue) {
-//     for(let i = fromIndex; i < str.length; i++) {
-//       if (char === str[i]) {
-//         console.log('Got it!')
-//         index = i;
-//         if (searchValue.length > 1) continue;
-//         else break;
-//       }
-//     }
-//   }
-//
-//   return index;
-// }
-//
-// console.log(myIndexOf('canal', 'an'))
 
