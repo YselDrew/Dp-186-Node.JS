@@ -33,7 +33,7 @@ function myLastIndexOf(str, searchValue, fromIndex = str.length) {
 
   for (let i = fromIndex; i >= 0;  i--) {
     if(str[i] === searchValue[0]) {
-      checkWord = mySubstr(str, i, searchValueLength)
+      checkWord = mySubstr(str, i, searchValueLength);
       if (checkWord === searchValue) {
         index = i;
         break; 
@@ -41,6 +41,33 @@ function myLastIndexOf(str, searchValue, fromIndex = str.length) {
     }
   }
   return index;
+}
+
+
+// lastIndexOf(string, searchValue, fromIndex)
+function myIncludes(str, searchValue, position = 0) {
+  let checkWord;
+
+  if (position < 0) {
+    position = str.length + position - 1;
+  }
+
+  console.log(position)
+  if (!searchValue) {
+    return true;
+  }
+
+  let searchValueLength = searchValue.length;
+
+  for (let i = position; i < str.length;  i++) {
+    if(str[i] === searchValue[0]) {
+      checkWord = mySubstr(str, i, searchValueLength);
+      if (checkWord === searchValue) {
+        return true;
+      }
+    }
+  }
+  return false;
 }
 
 
