@@ -1,6 +1,6 @@
 // TODO: 
 // 1. Finish substring function
-// 2. Rewrite lastIndexOf function
+// 2. Rewrite lastIndexOf function DONE
 // 3. Write includes function
 
 
@@ -17,23 +17,27 @@ function myConcat(...strings) {
 // lastIndexOf(string, searchValue, fromIndex)
 function myLastIndexOf(str, searchValue, fromIndex = str.length) {
   let index = -1;
+  let checkWord;
 
   if (fromIndex < 0) {
     fromIndex = 0;
   }
   if (fromIndex >= str.length) {
-    fromIndex = str.length
+    fromIndex = str.length;
   }
   if (!searchValue) {
-    return fromIndex
+    return fromIndex;
   }
 
+  let searchValueLength = searchValue.length;
+
   for (let i = fromIndex; i >= 0;  i--) {
-    console.log('i: ', i);
-    if(str[i] === searchValue) {
-      console.log('Got It')
-      index = i;
-      break; 
+    if(str[i] === searchValue[0]) {
+      checkWord = mySubstr(str, i, searchValueLength)
+      if (checkWord === searchValue) {
+        index = i;
+        break; 
+      }
     }
   }
   return index;
@@ -95,8 +99,8 @@ function mySubstring(str, indexA, indexB = str.length) {
   return newStr;
 }
 
-console.log(mySubstring('Mozilla', 1));
-console.log('Mozilla'.substring(10, 8))
+// console.log(mySubstring('Mozilla', 1));
+// console.log('Mozilla'.substring(10, 8))
 
 
 // myIndexOf(str, searchValue, fromIndex)
