@@ -71,14 +71,38 @@ function maxColor(carsArr) {
 //   return ovdCars;
 // }
 
-// function oldAndNew(carsArr){
-//     //Выдает массив объектов с датой и именем авто самого раннего и самого позднего в массиве
-//     //[{name : 'HONDA (Мопед)', date : '2009-09-18T00:00:00'}, {name : 'ВАЗ - 2105 (Легковий автотранспорт)', date : '2012-11-30T00:00:00'}]
-// }
+function oldAndNew(carsArr){
+  const oldCar = {
+    date: cars[0].THEFT_DATA,
+  }
+  const newCar = {
+    date: cars[0].THEFT_DATA,
+  }
+
+  let car;
+
+  const carsArrLength = carsArr.length;
+  for (let i = 0; i < carsArrLength; i++) {
+
+    car = carsArr[i];
+
+    if (car['THEFT_DATA'] > newCar.date) {
+      newCar.name = car['BRAND'];
+      newCar.date = car['THEFT_DATA'];
+    } 
+
+    if (car['THEFT_DATA'] < oldCar.date) {
+      oldCar.name = car['BRAND'];
+      oldCar.date = car['THEFT_DATA'];
+    }
+  }
+
+  return [oldCar, newCar]
+}
 
 // console.log(countColor(cars));
 // console.log(maxColor(cars));
 // console.log(countCars(cars));
-// console.log(oldAndNew(cars));
+console.log(oldAndNew(cars));
 
 
