@@ -1,8 +1,5 @@
-// cars //Массив с объектами
-
-
-function countColor(carsArr){
-  const colors = getArrayOfItems(carsArr, 'COLOR')
+function countColor(carsArr) {
+  const colors = getArrayOfItems(carsArr, 'COLOR');
 
   return colors;
 }
@@ -17,20 +14,21 @@ function maxColor(carsArr) {
 
   const colorsLength = sortedColors.length;
   for (let i = 1; i < colorsLength; i++) {
-    if (sortedColors[i] === sortedColors[i - 1])
-        currentCounter++;
-    else {
-        if (currentCounter > counter) {
-            counter = currentCounter;
-            mostCommonColor = sortedColors[i - 1];
-        }
-        currentCounter = 1;
+
+    if (sortedColors[i] === sortedColors[i - 1]) {
+      currentCounter++;
+    } else {
+      if (currentCounter > counter) {
+        counter = currentCounter;
+        mostCommonColor = sortedColors[i - 1];
+      }
+      currentCounter = 1;
     }
+
   }
 
   const lastColor = colorsLength - 1;
-  if (currentCounter > counter)
-  {
+  if (currentCounter > counter) {
       counter = currentCounter;
       mostCommonColor = sortedColors[lastColor];
   }
@@ -39,7 +37,7 @@ function maxColor(carsArr) {
 }
 
 
-function countCars(carsArr){
+function countCars(carsArr) {
   const sortedOVD = getArrayOfItems(carsArr, 'OVD').sort();
   let counter = 1;
 
@@ -47,32 +45,32 @@ function countCars(carsArr){
   
   const OVDlength = sortedOVD.length;
   for (let i = 1; i < OVDlength; i++) {
-    if (sortedOVD[i] === sortedOVD[i - 1])
+    if (sortedOVD[i] === sortedOVD[i - 1]) {
         counter++;
-    else {
-        amountOfCars.push({OVD: sortedOVD[i], count: counter})
+    } else {
+        amountOfCars.push({OVD: sortedOVD[i], count: counter});
         counter = 1;
     }
   }
 
-  const lastOVD = OVDlength - 1
+  const lastOVD = OVDlength - 1;
 
-  amountOfCars.push({OVD: sortedOVD[lastOVD], count: counter})
+  amountOfCars.push({OVD: sortedOVD[lastOVD], count: counter});
 
   return amountOfCars;
 }
 
 
-function oldAndNew(carsArr){
+function oldAndNew(carsArr) {
   const oldCar = {
     name: undefined,
     date: cars[0].THEFT_DATA,
-  }
+  };
 
   const newCar = {
     name: undefined,
     date: cars[0].THEFT_DATA,
-  }
+  };
 
   let car;
 
@@ -92,7 +90,7 @@ function oldAndNew(carsArr){
     }
   }
 
-  return [oldCar, newCar]
+  return [oldCar, newCar];
 }
 
 
@@ -103,15 +101,14 @@ function getArrayOfItems(carsArr, item) {
   const carsArrLength = carsArr.length;
   for (let i = 0; i < carsArrLength; i++) {
     car = carsArr[i];
-    arr.push(car[item])
+    arr.push(car[item]);
   }
   return arr;
 }
 
 
-// console.log(countColor(cars));
-// console.log(maxColor(cars));
-// console.log(countCars(cars));
-// console.log(oldAndNew(cars));
-
+console.log(countColor(cars));
+console.log(maxColor(cars));
+console.log(countCars(cars));
+console.log(oldAndNew(cars));
 
