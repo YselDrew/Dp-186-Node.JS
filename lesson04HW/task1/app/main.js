@@ -107,8 +107,8 @@ function getArrayOfItems(carsArr, item) {
 }
 
 
-console.log(countColor(cars));
-console.log(maxColor(cars));
-console.log(countCars(cars));
-console.log(oldAndNew(cars));
+// console.log(countColor(cars));
+// console.log(maxColor(cars));
+// console.log(countCars(cars));
+// console.log(oldAndNew(cars));
 
