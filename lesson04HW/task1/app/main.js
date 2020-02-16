@@ -38,24 +38,24 @@ function maxColor(carsArr) {
 
 
 function countCars(carsArr) {
-  const sortedOVD = getArrayOfItems(carsArr, 'OVD').sort();
+  const sortedOvd = getArrayOfItems(carsArr, 'OVD').sort();
   let counter = 1;
 
   const amountOfCars = [];
   
-  const OVDlength = sortedOVD.length;
-  for (let i = 1; i < OVDlength; i++) {
-    if (sortedOVD[i] === sortedOVD[i - 1]) {
+  const ovdLength = sortedOvd.length;
+  for (let i = 1; i < ovdLength; i++) {
+    if (sortedOvd[i] === sortedOvd[i - 1]) {
         counter++;
     } else {
-        amountOfCars.push({OVD: sortedOVD[i], count: counter});
+        amountOfCars.push({OVD: sortedOvd[i], count: counter});
         counter = 1;
     }
   }
 
-  const lastOVD = OVDlength - 1;
+  const lastOvd = ovdLength - 1;
 
-  amountOfCars.push({OVD: sortedOVD[lastOVD], count: counter});
+  amountOfCars.push({OVD: sortedOvd[lastOvd], count: counter});
 
   return amountOfCars;
 }
