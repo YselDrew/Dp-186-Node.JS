@@ -6,14 +6,8 @@ function countColor(carsArr){
 
   const carsArrLength = carsArr.length;
   for (let i = 0; i < carsArrLength; i++) {
-
     car = carsArr[i];
-
-    for(let key in car) {
-      if (key === "COLOR") {
-        colors.push(car[key])
-      }
-    }
+    colors.push(car['COLOR'])
   }
   return colors;
 }
@@ -48,28 +42,28 @@ function maxColor(carsArr) {
   return mostCommonColor;
 }
 
-// function countCars(carsArr){
-//     //Выдает массив объектов с именем ОВД и количеством автомобилей
-//     // [{OVD: 'Название ОВД', count : количество_машин}, ...]
-//   const ovdCars = [];
-//   const buffObj = {}
-//
-//   let car;
-//
-//   const carsArrLength = carsArr.length;
-//   for (let i = 0; i < carsArrLength; i++) {
-//
-//     car = carsArr[i];
-//
-//     for(let key in car) {
-//       if (key === 'OVD') {
-//         buffObj.OVD = car[key]
-//       }
-//       ovdCars.push(buffObj)
-//     }
-//   }
-//   return ovdCars;
-// }
+function countCars(carsArr){
+    //Выдает массив объектов с именем ОВД и количеством автомобилей
+    // [{OVD: 'Название ОВД', count : количество_машин}, ...]
+  const ovdCars = [];
+  const buffObj = {}
+
+  let car;
+
+  const carsArrLength = carsArr.length;
+  for (let i = 0; i < carsArrLength; i++) {
+
+    car = carsArr[i];
+
+    for(let key in car) {
+      if (key === 'OVD') {
+        buffObj.OVD = car[key]
+      }
+      ovdCars.push(buffObj)
+    }
+  }
+  return ovdCars;
+}
 
 function oldAndNew(carsArr){
   const oldCar = {
@@ -100,9 +94,9 @@ function oldAndNew(carsArr){
   return [oldCar, newCar]
 }
 
-// console.log(countColor(cars));
-// console.log(maxColor(cars));
+console.log(countColor(cars));
+console.log(maxColor(cars));
 // console.log(countCars(cars));
-console.log(oldAndNew(cars));
+// console.log(oldAndNew(cars));
 
 
