@@ -7,14 +7,12 @@ function decodeMessage(message) {
   return secretMessage;
 }
 
-
 function getArrayOfWords(message) {
   const sentences = message.split(/\? |\. |! /);
   const words = sentences.map(item => item.split(/, | |: /));
 
   return words;
 }
-
 
 function getSecretSentences(wordsArr) {
   const secretMessageArr = [];
@@ -41,7 +39,6 @@ function getSecretSentences(wordsArr) {
   return secretMessageArr;
 }
 
-
 function getKey(wordsArr) {
   const keySentence = wordsArr[0].map(item => item.replace(/'|"/g, ""));
   const key = keySentence.map(item => item.length - 1);
@@ -49,14 +46,12 @@ function getKey(wordsArr) {
   return key;
 }
 
-
 function transformToString(arr) {
   const str = arr.join(' ').replace(/"/g, '');
   const strCapitalized = str.charAt(0).toUpperCase() + str.slice(1) + '.';
 
   return strCapitalized;
 }
-
 
 const message = 'Ye\'sterday, we "bumped" into Laura. It had to happen, but you can\'t deny the timing couldn\'t be worse. The "mission" to try and seduce her was a complete failure last month? By the way, she still: has the ring I gave her! Anyhow, it hasn\'t been a pleasurable experience to go through it. I wanted to feel done with it first.'
 
