@@ -51,7 +51,7 @@ function myConcat(...args) {
   const concArr = [];
   
   for (let i = 0; i < args.length; i++) {
-    if (typeof(args[i]) === 'object') {
+    if (isArr(args[i])) {
       for (item of args[i]) {
         myPush(concArr, item);
       }
@@ -61,6 +61,14 @@ function myConcat(...args) {
   }
 
   return concArr;
+}
+
+function isArr(dataType) {
+  if (typeof(dataType) !== 'string' && dataType.length) {
+    return true
+  } else {
+    return false
+  }
 }
 
 const arr1 = [1, 2, 10, 15];
