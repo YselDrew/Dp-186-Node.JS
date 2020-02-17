@@ -47,14 +47,23 @@ function myUnshift(arr, ...args) {
   return arr.length;
 }
 
+function myConcat(...args) {
+  const concArr = [];
+  
+  for (let i = 0; i < args.length; i++) {
+    if (typeof(args[i]) === 'object') {
+      for (item of args[i]) {
+        myPush(concArr, item);
+      }
+    } else {
+      myPush(concArr, args[i])
+    }
+  }
+
+  return concArr;
+}
+
 const arr1 = [1, 2, 10, 15];
 const arr2 = [];
 const arr3 = ['Hello', 'How', 'Are', 'Ya'];
-
-// console.log('Default: ', arr1);
-// console.log(myShift());
-// console.log('Changed: ', arr1);
-
-console.log(myUnshift(arr2, 2))
-console.log(arr2)
 
