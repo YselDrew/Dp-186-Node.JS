@@ -10,7 +10,6 @@ function myPop(arr) {
 }
 
 function myPush(arr, ...args) {
-  // is there a need for checking '...args.length === 0'?
   for (let i = 0; i < args.length; i++) {
     arr[arr.length] = args[i];
   }
@@ -37,14 +36,22 @@ function myShift(arr) {
 function myUnshift(arr, ...args) {
   for (let i = args.length - 1; i >= 0; i--) {
     arr.length = arr.length + 1;
-    for (let j = arr.length - 1; j > 0; j--) {
+    for (let j = arr.length - 1; j >= 0; j--) {
       arr[j] = arr[j - 1];
+      console.log(arr[j])
     }
     arr[0] = args[i];
   }
 
   return arr.length;
 }
+
+const arr1 = [1, 2, 10, 15];
+const arr2 = [];
+const arr3 = ['Hello', 'How', 'Are', 'Ya'];
+
+myUnshift(arr1, 2)
+console.log(arr1)
 
 function myConcat(...args) {
   const concArr = [];
@@ -69,8 +76,3 @@ function isArr(dataType) {
     return false;
   }
 }
-
-const arr1 = [1, 2, 10, 15];
-const arr2 = [];
-const arr3 = ['Hello', 'How', 'Are', 'Ya'];
-
