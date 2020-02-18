@@ -1,5 +1,3 @@
-//work on exceptions
-
 function myPop(arr) {
   if (!arr.length) {
     return;
@@ -12,6 +10,7 @@ function myPop(arr) {
 }
 
 function myPush(arr, ...args) {
+  // is there a need for checking '...args.length === 0'?
   for (let i = 0; i < args.length; i++) {
     arr[arr.length] = args[i];
   }
@@ -41,7 +40,7 @@ function myUnshift(arr, ...args) {
     for (let j = arr.length - 1; j > 0; j--) {
       arr[j] = arr[j - 1];
     }
-    arr[0] = args[i]
+    arr[0] = args[i];
   }
 
   return arr.length;
@@ -56,7 +55,7 @@ function myConcat(...args) {
         myPush(concArr, item);
       }
     } else {
-      myPush(concArr, args[i])
+      myPush(concArr, args[i]);
     }
   }
 
@@ -65,9 +64,9 @@ function myConcat(...args) {
 
 function isArr(dataType) {
   if (typeof(dataType) !== 'string' && dataType.length) {
-    return true
+    return true;
   } else {
-    return false
+    return false;
   }
 }
 
