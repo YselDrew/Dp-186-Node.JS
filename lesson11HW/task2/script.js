@@ -26,7 +26,8 @@
   }
 
 
-  document.addEventListener('DOMContentLoaded', showTasks);
+  showTasks();
+  // document.addEventListener('DOMContentLoaded', showTasks);
 
   dom.button.addEventListener('click', addTask);
 
@@ -37,5 +38,5 @@
       addTask();
     }
   })
-
 })()
+
