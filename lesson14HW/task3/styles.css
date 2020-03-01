@@ -1,0 +1,11 @@
+.undone-tasks {
+ list-style-type: circle;
+}
+
+.undone-task:hover {
+  cursor: pointer;
+}
+
+.done-tasks {
+  text-decoration: line-through;
+}
