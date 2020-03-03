@@ -65,5 +65,5 @@ function calculateResult(sign, numb1, numb2) {
 calculate("@~@@*@@");
 calculate("@~@@+@@~~");
 calculate("@~~/@@");
-calculate("@@@@~~-@~~");
+calculate("@@@@@-@~~");
 
