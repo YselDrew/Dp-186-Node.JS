@@ -1,0 +1,15 @@
+.output-wrapper {
+  width: 500px;
+  height: 400px;
+  display: flex;
+}
+
+.frameworks {
+  width: 50%;
+  height: 100%;
+}
+
+.pokemons {
+  width: 50%;
+  height: 100%;
+}
