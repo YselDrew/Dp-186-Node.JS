@@ -10,10 +10,12 @@ export class CheckFrameworkController {
   handleClick() {
     const str = this.view.inp.value;
     if (!str) {
-      console.error('No data')
-      return
+      console.error("No data");
+      return;
     }
 
-    this.model.checkFrameworkOrPokemon(str).then(data => this.view.showData(data))
+    this.model
+      .checkFrameworkOrPokemon(str)
+      .then(data => this.view.showData(data));
   }
 }

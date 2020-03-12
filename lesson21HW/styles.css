@@ -1,15 +1,19 @@
 .output-wrapper {
-  width: 500px;
-  height: 400px;
+  width: 300px;
   display: flex;
 }
 
 .frameworks {
   width: 50%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pokemons {
   width: 50%;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+

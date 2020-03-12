@@ -2,9 +2,9 @@ export class CheckFrameworkModel {
   constructor() {
     this.link = "https://pokeapi.co/api/v2/pokemon/";
     this.data = {
-      pokemons : [],
-      frameworks : [],
-    }
+      pokemons: [],
+      frameworks: [],
+    };
   }
 
   checkFrameworkOrPokemon(str) {
@@ -17,12 +17,12 @@ export class CheckFrameworkModel {
       responses.forEach(response => {
         const name = this.findName(namesArr, response.url);
 
-        if(response.status === 200) {
-          this.data.pokemons.push(name)
+        if (response.status === 200) {
+          this.data.pokemons.push(name);
         } else {
-          this.data.frameworks.push(name)
+          this.data.frameworks.push(name);
         }
-      })
+      });
       return this.data;
     });
   }
@@ -31,10 +31,8 @@ export class CheckFrameworkModel {
     for (let i = 0; i < arr.length; i++) {
       const name = arr[i];
       if (str.includes(name)) {
-        return name
+        return name;
       }
     }
   }
 }
-
-
